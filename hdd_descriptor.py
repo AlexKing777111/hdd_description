@@ -73,7 +73,7 @@ class HddDescriptor:
                 "Свободное место не может быть больше объема диска"
             )
         self.validate_values(self.volume, self.free_space, self.occupied_space)
-        self.validate_spaces(self.volume, self.free_space, self.occupied_space)
+        self.validate_spaces()
 
     @occupied_space.setter
     def occupied_space(self, occupied_space: int) -> None:
@@ -86,7 +86,7 @@ class HddDescriptor:
         else:
             raise ValueError("Занятое место не может быть больше объема диска")
         self.validate_values(self.volume, self.free_space, self.occupied_space)
-        self.validate_spaces(self.volume, self.free_space, self.occupied_space)
+        self.validate_spaces()
 
     def validate_types(self, controller, volume, free_space, occupied_space):
         """Метод для валидации типа данных."""
